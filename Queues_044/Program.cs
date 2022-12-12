@@ -20,7 +20,11 @@ namespace Queues_044
 
         public void insert(int element)
         {
-
+            if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1))
+            {
+                Console.WriteLine("\nQueue Overflow\n");
+                return;
+            }
         }
         static void Main(string[] args)
         {
