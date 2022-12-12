@@ -44,7 +44,12 @@ namespace Queues_044
         }
         public void remove()
         {
-
+            if (FRONT == -1)
+            {
+                Console.WriteLine("\nQueue Underflow\n");
+                    return;
+            }
+            Console.WriteLine("\nThe Element deleted from the queue is: " + queue_array[FRONT]);
         }
         static void Main(string[] args)
         {
