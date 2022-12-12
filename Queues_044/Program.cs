@@ -42,7 +42,10 @@ namespace Queues_044
             }
             queue_array[REAR] = element;
         }
-        
+        public void remove()
+        {
+
+        }
         static void Main(string[] args)
         {
         }
