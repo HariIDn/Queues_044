@@ -58,7 +58,12 @@ namespace Queues_019
                     FRONT = FRONT + 1;
             }
         }
-        
+        public void display()
+        {
+            
+
+            
+        }
         static void Main(string[] args)
         {
             
