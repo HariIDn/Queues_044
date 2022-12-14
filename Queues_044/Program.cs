@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Queues_044
+namespace Queues_019
 {
     class Queues
     {
@@ -13,19 +13,16 @@ namespace Queues_044
 
         public Queues()
         {
-            //memberi nilai pada variabel REAR dan FRONT
             FRONT = -1;
             REAR = -1;
         }
-
         public void insert(int element)
         {
             if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1))
             {
-                Console.WriteLine("\nQueue Overflow\n");
+                Console.WriteLine("\n Queue overflow\n");
                 return;
             }
-
             if (FRONT == -1)
             {
                 FRONT = 0;
@@ -33,12 +30,10 @@ namespace Queues_044
             }
             else
             {
-                //jika posisi REAR paling belakang, maka nilai REAR menjadi 0
                 if (REAR == max - 1)
                     REAR = 0;
                 else
-                    //jika REAR bukan di posisi belakang
-                    REAR = REAR++;
+                    REAR = REAR + 1;
             }
             queue_array[REAR] = element;
         }
@@ -46,13 +41,27 @@ namespace Queues_044
         {
             if (FRONT == -1)
             {
-                Console.WriteLine("\nQueue Underflow\n");
-                    return;
+                Console.WriteLine("Queue underflow");
+                return;
             }
-            Console.WriteLine("\nThe Element deleted from the queue is: " + queue_array[FRONT]);
+            Console.WriteLine("\nThe elemet deleted from the queue is : " + queue_array[FRONT] + "\n");
+            if (FRONT == REAR)
+            {
+                FRONT = -1;
+                REAR = -1;
+            }
+            else
+            {
+                if (FRONT == max - 1)
+                    FRONT = 0;
+                else
+                    FRONT = FRONT + 1;
+            }
         }
+        
         static void Main(string[] args)
         {
+            
         }
     }
 }
