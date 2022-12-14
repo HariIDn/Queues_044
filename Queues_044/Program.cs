@@ -111,7 +111,25 @@ namespace Queues_019
                     Console.Write("\nEnter your choice: ");
                     ch = Convert.ToChar(Console.ReadLine());
                     Console.WriteLine();
-                    
+                    switch (ch)
+                    {
+                        case '1':
+                            Console.WriteLine("Enter a number;  ");
+                            int num = Convert.ToInt32(Console.ReadLine());
+                            queue.insert(num);
+                            break;
+                        case '2':
+                            queue.remove();
+                            break;
+                        case '3':
+                            queue.display();
+                            break;
+                        case '4':
+                            return;
+                        default:
+                            Console.WriteLine("Invalid Option");
+                            break;
+                    }
                 }
                 catch (Exception e)
                 {
